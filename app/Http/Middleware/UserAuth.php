@@ -16,6 +16,7 @@ class UserAuth
      */
     public function handle(Request $request, Closure $next)
     {
+        //Middleware provide a convenient mechanism for filtering HTTP requests entering your application. For example, Laravel includes a middleware that verifies the user of your application is authenticated. If the user is not authenticated, the middleware will redirect the user to the login screen.
         if($request->path()=='login' && $request->session()->has('user'))
         {
             return redirect('/');
